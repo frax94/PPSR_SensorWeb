@@ -20,11 +20,16 @@
 	// stringa di connessione al DBMS
 	$connessione = new mysqli($host, $user, $password, $db);
 	
-	// verifica su eventuali errori di connessione
-if ($connessione->connect_errno) {
-    echo "Connessione fallita: ". $connessione->connect_error . ".";
-    exit();
-	}
+
+	
+	
+	//definizione costanti
+	define("ZERO", 0);
+	define("UNO", 1);
+	define("DUE", 2);
+	define("TRE", 3);
+	
+	
 ?>
   <!-- inizio titolo -->
    <div id="titolo"><h1>Amministratore</h1></div>
@@ -69,9 +74,9 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
-						<td>  <?php echo $row1[2];?> </td>
+						<td>  <?php echo htmlspecialchars($row1[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars($row1[UNO]);?> </td>
+						<td>  <?php echo htmlspecialchars($row1[DUE]);?> </td>
 				</tr>
 					<?php
 							}
@@ -184,10 +189,10 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row3[0];?> </td>
-						<td>  <?php echo $row3[1];?> </td>
-						<td>  <?php echo $row3[2];?> </td>
-						<td>  <?php echo $row3[3];?> </td>
+						<td>  <?php echo htmlspecialchars($row3[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars($row3[UNO]);?> </td>
+						<td>  <?php echo htmlspecialchars($row3[DUE]);?> </td>
+						<td>  <?php echo htmlspecialchars($row3[TRE]);?> </td>
 				</tr>
 					<?php
 							}

@@ -22,11 +22,15 @@
 	// stringa di connessione al DBMS
 	$connessione = new mysqli($host, $user, $password, $db);
 	
-	// verifica su eventuali errori di connessione
-if ($connessione->connect_errno) {
-    echo "Connessione fallita: ". $connessione->connect_error . ".";
-    exit();
-	}
+
+	
+	
+	//definizione costanti
+	define("ZERO", 0);
+	define("UNO", 1);
+	define("DUE", 2);
+	define("TRE", 3);
+	
 ?>
   <!-- inizio titolo -->
    <div id="titolo"><h1>Dipendente</h1></div>
@@ -76,8 +80,8 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[0]);?> </td>					 <!--  MODIFICATO -->
+						<td>  <?php echo htmlspecialchars ($row1[1]);?> </td>
 						
 				</tr>
 					<?php
@@ -188,15 +192,17 @@ if ($connessione->connect_errno) {
 						$query1 = "SELECT nome, cognome, email FROM utenti WHERE admin = 0 " ;
 						$utenti = $connessione->query($query1);
 						
+						
+						
 						while ($row1 = $utenti->fetch_array(MYSQLI_NUM)){
 					
 						
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
-						<td>  <?php echo $row1[2];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[UNO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[DUE]);?> </td>
 				</tr>
 					<?php
 							}
@@ -238,10 +244,10 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
-						<td>  <?php echo $row1[2];?> </td>
-						<td>  <?php echo $row1[3];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[UNO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[DUE]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[TRE]);?> </td>
 				</tr>
 					<?php
 							}
@@ -323,10 +329,10 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
-						<td>  <?php echo $row1[2];?> </td>
-						<td>  <?php echo $row1[3];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[UNO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[DUE]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[TRE]);?> </td>
 				</tr>
 					<?php
 							}
@@ -411,8 +417,8 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[UNO]);?> </td>
 						
 				</tr>
 					<?php
@@ -608,7 +614,7 @@ if ($connessione->connect_errno) {
 				<legend>Tipo Sensore</legend>
 					Pressione <input type="radio" id="linguaggio" name="linguaggio" value="Pressione"/>
 					
-					Umidità  <input type="radio" id="linguaggio" name="linguaggio" value="Umidità"/>
+					Umidità  <input type="radio" id="linguaggio" name="linguaggio" value="Umidita"/>
 				Temperatura <input type="radio" id="linguaggio"  name="linguaggio" value="Temperatura"/>
 			</fieldset>
 			
@@ -684,9 +690,9 @@ if ($connessione->connect_errno) {
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
-						<td>  <?php echo $row1[2];?> </td>
+						<td>  <?php echo htmlspecialchars($row1[ZERO]);?> </td>
+						<td>  <?php echo htmlspecialchars($row1[UNO]);?> </td>
+						<td>  <?php echo htmlspecialchars($row1[DUE]);?> </td>
 						
 				</tr>
 					<?php
@@ -733,7 +739,8 @@ if ($connessione->connect_errno) {
 						$query5 = "DELETE FROM `modellisensori`  WHERE Codice = '$codice' " ;
 						$impianti = $connessione->query($query5);
 					}
-				
+			// chiusura della connessione
+			$connessione->close();
 		?> </li>
        </ul>
 	   

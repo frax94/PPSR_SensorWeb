@@ -22,16 +22,12 @@
 	// stringa di connessione al DBMS
 	$connessione = new mysqli($host, $user, $password, $db);
 	
-	// verifica su eventuali errori di connessione
-if ($connessione->connect_errno) {
-    echo "Connessione fallita: ". $connessione->connect_error . ".";
-    exit();
-	}
+
 	
 	
 session_start();
 $id=  $_SESSION['lol'];
-echo $id;
+		
 
 $query3 = "SELECT `nome`, `cognome` FROM `utenti` WHERE ID='$id'" ;
 $risultato = $connessione->query($query3);
@@ -85,8 +81,8 @@ while ($row1 = $risultato->fetch_array(MYSQLI_NUM)){
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[0]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[1]);?> </td>
 						
 						
 				</tr>
@@ -146,13 +142,13 @@ while ($row1 = $risultato->fetch_array(MYSQLI_NUM)){
 		
 						<td>  <?php 
 									
-										echo $row1[0];
+										echo htmlspecialchars ($row1[0]);
 									
 							
 						
 						?> </td>
 						<td>  <?php 
-										echo $row1[1];
+										echo htmlspecialchars ($row1[1]);
 									
 						?></td>
 				
@@ -257,8 +253,8 @@ while ($row1 = $risultato->fetch_array(MYSQLI_NUM)){
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[0]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[1]);?> </td>
 						
 						
 				</tr>
@@ -315,8 +311,8 @@ while ($row1 = $risultato->fetch_array(MYSQLI_NUM)){
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
-						<td>  <?php echo $row1[1];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[0]);?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[1]);?> </td>
 				
 				</tr>
 					<?php
@@ -354,11 +350,13 @@ while ($row1 = $risultato->fetch_array(MYSQLI_NUM)){
 						?>
 					<tr> 
 		
-						<td>  <?php echo $row1[0];?> </td>
+						<td>  <?php echo htmlspecialchars ($row1[0]);?> </td>
 					
 				</tr>
 					<?php
 							}
+							// chiusura della connessione
+							$connessione->close();
 					?>	
 				</tbody>
 				

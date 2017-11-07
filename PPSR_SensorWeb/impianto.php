@@ -12,12 +12,6 @@ $db = "test";
 
 // stringa di connessione al DBMS
 $connessione = new mysqli($host, $user, $password, $db);
-
-// verifica su eventuali errori di connessione
-if ($connessione->connect_errno) {
-    echo "Connessione fallita: ". $connessione->connect_error . ".";
-    exit();
-}
 ?>
 
 
@@ -44,7 +38,7 @@ if ($connessione->connect_errno) {
 
 	session_start();
 	$id=  $_SESSION['lol'];
-	echo $id;
+	echo htmlspecialchars($id);
 	
 	/*
 $numeri =array();
