@@ -1,0 +1,222 @@
+* {margin: 0; padding: 0;}
+
+body {
+	background: #699f9f;
+    margin: 0 auto;
+    max-width: 60%;
+    font-family: sans-serif;
+}
+
+h2 {
+    color: #fff;
+    border-bottom: 2%;
+    border-bottom-style: solid;
+    border-collapse: separate;
+    margin-bottom: 3%;
+}
+
+
+/*CONTAINER*/
+#cont{	
+	background: #fff;
+	height: 90%;
+	margin-top: 3%;
+	margin-bottom:3%
+}
+
+/* INIZIO TITOLO */
+#titolo {
+    padding: 2%;
+    text-align: center;
+    color: #000000;
+}
+/* FINE TITOLO */
+
+/* INIZIO LISTA CATEGORIE */
+#lista_categorie {
+    float: left;
+    margin-top: 1.5%;
+	margin-left:2%;
+    width: 30%;
+	text-align: center;
+	line-height: 300%; /*centrare verticalmente*/
+    background: #fff;
+    border-radius: 15px;
+}
+#table-cust{
+	padding-left: 200px;
+}
+
+
+
+/*FORM CLASSE TABELLA*/
+table.form-user{
+	margin-left:auto;
+	margin-right: auto;
+	color: #fff;
+}
+
+
+/*BUTTON*/
+#btn1{
+	 color: #fff;
+    background: #699f9f;
+    padding: 5px;
+	border-radius: 5px;
+	font-family: sans-serif;
+}
+
+#btn1:hover {
+background: #476b6b;
+}
+
+#table-clienti{
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+
+
+#lista_categorie ul {
+    list-style: none;
+}
+
+#lista_categorie li {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 2% auto;
+    width: 80%;
+    height: 8%;
+    border-radius: 10px;
+    background: #699f9f;
+    color: #fff;
+}
+
+#lista_categorie li:hover {
+    background: #476b6b;
+    color: #fff;
+    cursor: pointer;
+}
+
+#lista_giochi {
+    float: left;
+    margin-top: 2%;
+    margin-left: 2%;
+	margin-right:2%;
+    width: 63.7%;
+    text-align: center;
+    background: #699f9f;
+    border-radius: 15px;
+	
+}
+
+#lista_giochi ul {
+    list-style: none;
+}
+
+#lista_giochi li {
+    margin: 2% auto;
+	color: #fff;
+}
+
+#lista_giochi a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 120%;
+}
+
+#lista_giochi a:hover {
+    border-bottom: 2%;
+    border-bottom-style: solid;
+    border-radius: 5px;
+    border-collapse: separate;
+}
+/*FINE LISTA GIOCHI */
+
+/*INIZIO BOTTONE HOME */
+#bot_home {
+    width: 100%;
+    float: right;
+    margin-bottom: 1%;
+}
+
+#bot_home ul {
+    list-style: none;
+}
+
+#bot_home li a {
+    float: right;
+    padding: 1%;
+    margin-left: 1%;
+    padding: 1%;
+    text-decoration: none;
+    color: #333;
+    background: #fff;
+    border-style: solid;
+    border-color: #777;
+    border-radius: 15px;
+}
+
+#bot_home a:hover {
+    color: #fff;
+    background: #333;
+    border-style: solid;
+    border-color: white;
+}
+/*FINE BOTTENE HOME */
+
+/*CENTRARE TABELLA*/
+table.table1 { 
+	margin-left:auto; margin-right:auto; 
+}
+
+/*CLASSE TABELLA1*/
+.table1 {
+	width: 80%
+}
+
+.table1 th {
+	background-color:#C1BEBE;
+	color:#FFFFFF
+	
+}
+.table1,.table1 th,.table1 td
+{
+	font-size:0.95em;
+	text-align:center;
+	padding:4px;
+	border:1px solid #929191;
+	border-collapse:collapse
+}
+.table1 tr:nth-child(odd){
+	background-color: #DEDEDE;
+}
+.table1 tr:nth-child(even){
+	background-color: #ffffff;
+}
+
+/*INIZIO COPYRIGHT */
+#copyright{ 
+	float:left;
+	color: #000000;
+	font-size: 65%;
+	font-family:cursive;
+	text-align: center;
+	width: 100%;
+	
+}
+/*FINE COPYRIGHT */
+
+/*CLEARFIX*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+

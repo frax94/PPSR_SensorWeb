@@ -1,0 +1,27 @@
+
+
+body
+{
+    background-color: #eee;
+    font:12px Arial, sans-serif;
+}
+.table { width: 80%; color: #000000; margin-left: auto; margin-right: auto;}
+.table th {background-color: #b0e0e6;}
+.table td {background-color: #eee;}
+th, td { width: 16%; }
+.table,
+td,
+th
+{
+    border:1px solid #333;
+    border-collapse:collapse
+}
+.table tbody td a{text-decoration: none; color: #000000;}
+
+
+.impianto { width: 80%; color: #000000; margin-left: auto; margin-right: auto; border-collapse: collapse;}
+.impianto th, td { width: 16%; }
+.impianto th{background-color: #b0e0e6;}
+.impianto td {background-color: #eee;}
+
+

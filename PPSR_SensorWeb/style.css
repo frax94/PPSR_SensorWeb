@@ -1,0 +1,32 @@
+body{
+    background: #699f9f;
+	font-family: sans-serif;
+}
+
+table.form-user{
+	margin-left:auto;
+	margin-right: auto;
+	color: #000;
+}
+
+#frm{
+    border: solid gray 1px;
+    width: 20%;
+    border-radius: 5px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 50px;
+
+}
+
+#btn{
+	 color: #fff;
+    background: #699f9f;
+    padding: 5px;
+	border-radius: 5px;
+	font-family: sans-serif;
+}
+
+#btn:hover {
+background: #476b6b;
+}
