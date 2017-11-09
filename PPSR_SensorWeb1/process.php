@@ -15,13 +15,13 @@ $password1 = $_POST['password'];
 */
 
 // nome di host
-$host = "localhost";
+$host = 'localhost';
 // username dell'utente in connessione
-$user = "root";
+$user = 'root';
 // password dell'utente
-$password = "";
+$password = '';
 // nome del database
-$db = "test";
+$db = 'test';
 
 // stringa di connessione al DBMS
 $connessione = new mysqli($host, $user, $password, $db);
@@ -30,8 +30,9 @@ $connessione = new mysqli($host, $user, $password, $db);
 	
 	
 	//definizione costanti
-	define("ZERO", 0);
-
+	define('ZERO', 0);
+	define('DUE', 2);
+	define('UNO', 1);
 
 
 
@@ -48,7 +49,7 @@ if($query->num_rows) {
 		
 		
 		
-		if($row1[0] == 0){
+		if($row1[ZERO] == ZERO){
 			
 			//per passare l'id della tabella
 			$id = "SELECT id FROM utenti WHERE email = '$username' AND password = '$password1'";
@@ -57,17 +58,17 @@ if($query->num_rows) {
 			
 				session_start();
 				$_SESSION['lol'] = $row[0];
-				echo '<a href="table.php">porta in automatico alla panina seguente grazie al comando sotto</a>';
+			
 				}
 				
 				header("location: cliente.php");	//chiama lista 
 				
 
-		} else if ($row1[0] == 1){
+		} else if ($row1[ZERO] == UNO){
 			
 			header("location: dipendente.php");
 			
-		} else if ($row1[0] == 2){
+		} else if ($row1[ZERO] == DUE){
 			
 			header("location: amministratore.php");
 
