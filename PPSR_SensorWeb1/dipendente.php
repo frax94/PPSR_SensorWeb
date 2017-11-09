@@ -15,7 +15,7 @@
 	// username dell'utente in connessione
 	$user = "root";
 	// password dell'utente
-	$password = "";
+	 $password = "";
 	// nome del database
 	$db = "test";
 
@@ -45,7 +45,7 @@
            <li onclick="click_categorie('giochi_di_ruolo')">Elimina Cliente</li>
            <li onclick="click_categorie('online')">Nuovo Impianto</li>
            <li onclick="click_categorie('picchiaduro')">Elimina Impianto</li>
-           <li onclick="click_categorie('platform')">Modifica Impianto</li>
+          
            <li onclick="click_categorie('sparatutto')">Crea Sensore</li>
            <li onclick="click_categorie('sportivo')">Elimina Sensore</li>
        </ul>
@@ -99,49 +99,36 @@
 	   <!--  INIZIO NUOVO CLIENTE -->
 	   
  <ul id="azione" style="display: none">
-           <h2>Nuovo Cliente</h2>
+            <h2>Nuovo Cliente</h2>
            <li>
 		   
 				  <div id="frm">
-					<form  method="POST">
-						<table class ="form-user" >
-					<tr><td>
+				<form  method="POST">
+					<p>
 						<label>Nome</label>
-						</td>
-						<td>
 						<input type="text" id="nome1" name="nome1"/>
-						</td>
-					</tr>
-					<tr><td>
+						
+					</p>
+					<p>
 						<label>Cognome </label>
-						</td>
-						<td>
 						<input type="text" id="cognome" name="cognome"/>
-						</td>
-					</tr>
-					<tr><td>
+					</p>
+					<p>
 						<label>Email </label>
-						</td>
-						<td>
 						<input type="text" id="email" name="email"/>
-					</td>
-					</tr>
-					<tr><td>
-					
+					</p>
+					<p>
 						<label>Password </label>
-						</td>
-						<td>
 						<input type="password" id="password1" name="password1"/>
-					</td>
-					</tr>
-					<tr><th colspan="2">
-					<br>
-						<input type="submit" id="btn1" name="Inserisci" value="Inserisci Cliente"/>
-					</th></tr>
+					</p>
+					<p>
+						
+						<input type="submit" id="btn1" name="Insersci"/>
+					</p>
 					
-					</table>
-					</form>
-				  
+	
+         </form>
+   
     </div>
 			 <?php
 					$email ="";
@@ -154,7 +141,7 @@
 					if (isset($_POST['cognome'])) $cognome=$_POST['cognome'];
 					if (isset($_POST['password1'])) $password2=$_POST['password1'];
 					
-					if ($email == "" or $nome == "" or $cognome= "" or $password2==""){
+					if ($email == "" or $nome == "" or $cognome == "" or $password2==""){
 							echo "Riempire tutti i campi";
 					} else{
 						$query3 = "INSERT INTO `utenti`(`ID`, `Nome`, `Cognome`, `Email`, `Password`, `admin`) VALUES ('','$nome','$cognome','$email','$password2','0')" ;
@@ -165,7 +152,6 @@
 	  
 		   
 		   </li>
-          
        </ul>
 	   
 	   <!--  FINE NUOVO CLIENTE -->
@@ -266,7 +252,7 @@
 					<tr><td>
 						<label>ID Cliente da eliminare</label>
 						</td><td>
-						<input type="text" id="id" name="id"/>
+						<input type="text" id="id44" name="id44"/>
 						<td></tr>
 						<tr><th colspan="2">
 						<br>
@@ -281,16 +267,16 @@
 			 <?php
 					
 					
-					$id = "";
+					$id44 = "";
 						
 				
-					if (isset($_POST['id'])) $id=$_POST['id'];
+					if (isset($_POST['id44'])) $id44=$_POST['id44'];
 				
 					
-					if ($id == ""){
+					if ($id44 == ""){
 							echo "Riempire tutti i campi";
 					} else{
-						$query5 = "DELETE FROM `utenti` WHERE ID = '$id' " ;
+						$query5 = "DELETE FROM `utenti` WHERE ID = '$id44' " ;
 						$impianti = $connessione->query($query5);
 					}
 				
@@ -476,119 +462,7 @@
 	       <!-- INIZIA MODIFICA IMPIANTO --> 
 		   
        <ul id="platform" style="display: none">
-           <h2>Modifica Impianto </h2>
           
-		 <!-- <li><table class=table1 border="1" cellspacing="10" cellpadding="10" >
-				
-				<thead>
-					<tr>
-						<th>ID Impianto</th>
-						<th>Nome Impianto</th>
-						
-					</tr>
-				</thead>
-				
-				<tbody>
-					<?php 
-						//$query1 = "SELECT ID, nome FROM impianti " ;
-						//$utenti = $connessione->query($query1);
-						
-						//while ($row1 = $utenti->fetch_array(MYSQLI_NUM)){
-					
-						
-						?>
-					<tr> 
-		
-						<td>  <?php //echo $row1[0];?> </td>
-						<td>  <?php// echo $row1[1];?> </td>
-						
-				</tr>
-					<?php
-							//}
-					?>	
-				</tbody>
-				
-			</table>
-			</li>-->
-			
-			 <div id="frm">
-				<form  method="POST">
-				<table class ="form-user" >
-						<tr><td>
-						<label>ID Impianto </label>
-						</td><td>
-						<input type="text" id="id" name="id"/>
-						</td></tr>
-						<tr><th colspan="2">
-						<br>
-						<input type="submit" id="btn1" name="Modifica Impianto"/>
-						</th></tr>
-				</table>
-				</form>
-			</div>
-			
-			<!-- tabella sensori dopo input -->
-			
-			
-				<?php
-					$id = "";
-					if (isset($_POST['id'])) $id=$_POST['id'];
-						if ($id == "" ){
-							?>
-							
-							 <table class=table1 border="1" cellspacing="10" cellpadding="10" >
-				
-				<thead>
-					<tr>
-						<th>ID Impianto</th>
-						<th>Nome Impianto</th>						
-					</tr>
-				</thead>
-				<tbody>
-						<?php $query1 = "SELECT ID, nome FROM impianti " ;
-						$utenti = $connessione->query($query1);
-						
-						while ($row1 = $utenti->fetch_array(MYSQLI_NUM)){
-						?>
-							<tr> 
-							<td>  <?php echo $row1[0];?> </td>
-							<td>  <?php echo $row1[1];?> </td>
-							</tr>
-					<?php
-						}
-					}
-					else{	
-					?>
-							 <table class=table1 border="1" cellspacing="10" cellpadding="10" >
-				
-				<thead>
-					<tr>
-						<th>ID Sensore</th>
-						<th>Modello</th>
-						<th>Rilevazione</th>
-						
-					</tr>
-				</thead>
-				<tbody>
-						<?php $query8 = "SELECT * FROM `sensori` WHERE Impianto = '$id' " ;
-						$sensori = $connessione->query($query8);
-						 while ($row1 = $sensori->fetch_array(MYSQLI_NUM)){
-							?>
-							
-						
-								<tr>
-								<td><?php echo $row1[0];?></td>
-								<td><?php echo $row1[1];?></td>
-								<td><?php echo $row1[3];?></td>
-								</tr>
-								
-								<?php
-								}
-					}
-								?>
-			</tbody>				
-			</table>				  
- 
        </ul>
 	   
 	   <!-- FINE MODIFICA IMPIANTO --> 
